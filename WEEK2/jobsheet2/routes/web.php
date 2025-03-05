@@ -34,6 +34,14 @@ Route::get('/about', AboutController::class);
 
 Route::get('/articles/{id}', ArticleController::class);
 
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Fauzi']);
+//     });
+
+Route::get('/greeting', [WelcomeController::class,
+'greeting']);
+    
+
 Route::get('/user/{name}', function ($name) {
     return 'Nama saya '.$name;
 });
