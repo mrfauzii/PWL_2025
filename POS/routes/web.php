@@ -10,8 +10,11 @@ use App\Http\Controllers\SalesController;
 Route::get('/', [HomeController::class, 'index']);
 
 // Halaman Products dengan prefix category
-Route::prefix('category')->group(function () {
-    Route::get('/{category}', [ProductController::class, 'showCategory']);
+Route::prefix("/category")->group(function () {
+    Route::get("/food-beverage", [ProductController::class, 'foodNbeverage']);
+    Route::get("/beauty-health", [ProductController::class, 'beautyHealth']);
+    Route::get("/home-care", [ProductController::class, 'homeCare']);
+    Route::get("/baby-kid", [ProductController::class, 'babyKid']);
 });
 
 // Halaman User dengan parameter ID dan Name

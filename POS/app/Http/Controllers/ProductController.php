@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function showCategory($category)
-    {
-        return view('products.index', compact('category'));
+    public function foodNbeverage() {
+        return view('products.food-beverage');
+    }
+
+    public function beautyHealth() {
+        return view('products.beauty-health');
+    }
+
+    public function homeCare() {
+        return view('products.home-care');
+    }
+
+    public function babyKid() {
+        return view('products.baby-kid');
     }
 }
