@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use League\Uri\UriTemplate\Operator;
 
 class UserController extends Controller
 {
@@ -43,7 +44,8 @@ class UserController extends Controller
         // });
         // return view('user', ['data' => $user]);
 
-        $user = UserModel::Where('username', 'manager9')->firstOrFail();
+        $user = UserModel::Where(column: 'level_id', operator: 2)->count();
+       
         return view('user', ['data' => $user]);
 
     }
