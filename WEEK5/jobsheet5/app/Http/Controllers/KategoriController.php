@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\DataTables\KategoriDataTable;
 
 class KategoriController extends Controller
-{   
-    public function index()
+{
+    public function index(KategoriDataTable $dataTable)
     {
+        return $dataTable->render('kategori.index');
+    }
+}
+
+
+// namespace App\Http\Controllers;
+
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
+
+// class KategoriController extends Controller
+// {   
+//     public function index()
+//     {
         //insert data dengan metode QUERY BUILDER
         // $data = [
         //     'kategori_kode' => 'SNK',
@@ -29,9 +43,9 @@ class KategoriController extends Controller
         // return 'Delete data berhasil. Jumlah data yang dihapus: ' . $row . ' baris';
 
         // select data dengan metode QUERY BUILDER
-        $data = DB::table('m_kategori')->get();
-        return view('kategori', ['data' => $data]);
+//         $data = DB::table('m_kategori')->get();
+//         return view('kategori', ['data' => $data]);
 
 
-    }
-}
+//     }
+// }
