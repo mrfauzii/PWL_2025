@@ -8,12 +8,12 @@
  use App\Models\BarangModel;
  use App\Models\SupplierModel;
  use App\Models\UserModel;
- 
+
  
  class StokModel extends Model
  {
      use HasFactory;
-     protected $table = 'm_stok';
+     protected $table = 't_stok';
      protected $primaryKey = 'stok_id';
      /**
       * The attributes that are mass assignable.
