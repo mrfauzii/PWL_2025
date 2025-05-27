@@ -51,8 +51,6 @@ Route::middleware('auth')->group(function () {
         });
         
         Route::group(['prefix' => 'user'], function () {
-            Route::get('/profile', [UserController::class, 'profile_page']);
-            Route::post('/update_picture', [UserController::class, 'update_picture']);
             Route::get('/',[UserController::class, 'index']);
             Route::post('/list',[UserController::class, 'list']);
             Route::get('/create_ajax',[UserController::class, 'create_ajax']);

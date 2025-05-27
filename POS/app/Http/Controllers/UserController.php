@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -289,7 +291,7 @@ class UserController extends Controller
     }
     public function profile_page()
     {
-        $user = auth()->user();
+        $user = Auth();
 
         $breadcrumb = (object) [
             'title' => 'User Profile',
@@ -311,7 +313,7 @@ class UserController extends Controller
         ]);
 
         try {
-            $user = auth()->user();
+            $user = Auth();
 
             if (!$user) {
                 return redirect('/login')->with('error', 'Silahkan login terlebih dahulu');
